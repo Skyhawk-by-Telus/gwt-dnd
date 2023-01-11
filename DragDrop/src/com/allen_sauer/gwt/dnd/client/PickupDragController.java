@@ -135,7 +135,7 @@ public class PickupDragController extends AbstractDragController {
     if (!getBehaviorDragProxy()) {
       restoreSelectedWidgetsStyle();
     }
-    movablePanel.removeFromParent();
+    //movablePanel.removeFromParent();
     movablePanel = null;
     super.dragEnd();
   }
@@ -187,8 +187,8 @@ public class PickupDragController extends AbstractDragController {
         context.boundaryPanel);
     if (getBehaviorDragProxy()) {
       movablePanel = newDragProxy(context);
-      context.boundaryPanel.add(movablePanel, currentDraggableLocation.getLeft(),
-          currentDraggableLocation.getTop());
+      //context.boundaryPanel.add(movablePanel, currentDraggableLocation.getLeft(),
+      //    currentDraggableLocation.getTop());
       checkGWTIssue1813(movablePanel, context.boundaryPanel);
     } else {
       saveSelectedWidgetsLocationAndStyle();
