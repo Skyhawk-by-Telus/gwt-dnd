@@ -428,4 +428,20 @@
 		<echo message="" />
 	</target>
 
+	<!-- build.properties holds the property values -->
+	<upload-github user="${github.user}" repo="${github.repo}" username="${github.username}" token="${github.token}"
+		       description="SkyHawk fork of gwt-dnd" path="${libdir}/${libjar}" />
+	
+	<path id="githubhuploadtask.classpath">
+		<pathelement location="."/>
+		<fileset dir=".">
+			<include name="**/*.jar"/>
+		</fileset>
+	</path>
+	
+	<taskdef name="upload-github"
+		 classname="no.kinsey.ant.GitHubUploadTask"
+		 classpathref="githubhuploadtask.classpath"
+		 loaderref="githubhuploadtask.classpath.loader" />
+
 </project>
